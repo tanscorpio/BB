@@ -1,0 +1,113 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- CSS CUSTOM -->
+    <link rel="stylesheet" type="text/css" href="{% static 'home/bg.css' %}">
+
+    <title>Sign In</title>
+</head>
+
+<body>
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #000221;">
+            <a class="navbar-brand" href="/">Home</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="signin">Sign In</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="signup">Sign Up</a>
+                    </li>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="d-flex justify-content-center h-100">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Sign In</h3>
+                    </div>
+                    <div class="card-body">
+                        <form method="POST" >
+                            {% csrf_token %}
+                            <div class="input-group form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><img src="{% static 'home/person-circle.svg' %}" alt="Bootstrap" width="30" height="30"></span>
+                                </div>
+                                <input type="text" class="form-control" placeholder="Username" name="username" required>
+
+                            </div>
+                            <div class="input-group form-group">
+                                <div class="input-group-prepend ">
+                                    <span class="input-group-text"><img src="{% static 'home/file-earmark-lock-fill.svg' %}" alt="Bootstrap" width="30" height="30"></span>
+                                </div>
+                                <input type="password" class="form-control" placeholder="Password" name="pass1" required>
+                            </div>
+                            <div class="row align-items-center remember">
+                                <input type="checkbox">Remember Me
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="Login" class="btn float-right login_btn">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-footer">
+                        <div class="d-flex justify-content-center links">
+                            Don't have an account?<a href="signup">Sign Up</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% if err %}
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Retry!!!</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <pp>Invalid Username or Password</pp>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endif %}
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            $(window).on('load', function () { $('#myModal').modal('show'); }); 
+        </script>
+</body>
+
+</html>

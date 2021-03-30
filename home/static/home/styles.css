@@ -1,0 +1,49 @@
+body {
+    width: 100%;
+    height: 100vh;
+    background-image: url("book.webp");
+    background-color: #cccccc;
+    background-size: cover ;
+    background-position-y: 75%;
+    background-repeat: no-repeat;
+   }
+   
+.navbar{
+    transition: 0.7s;
+}   
+.navbar:hover{
+    background: #353148;
+}
+.navbar-brand{
+   color:#d9c39e;
+}
+.navbar-brand:hover{
+    color: wheat;
+}
+.nav-link{
+    color: white;
+    transition: 0.5ss;
+}
+.nav-link:hover{
+    background-color: #d9c39e;
+    color: black;
+    border-radius: 10px;
+}
+.back {
+    padding-top:2%;
+    padding-bottom: 2%;
+    padding-left: 3%;
+    padding-right: 3%;
+    background-color:#353148b2;
+    border-radius: 10px;
+    color: white;
+  }
+.input-group-prepend span{
+    background-color:#d9c39e; 
+    color:#353148;
+}
+
+.caro{
+    width: 75%; height: 200px; background-color: #353148ce; margin: 10%; border-radius: 25px;
+    color: #dbcaab;
+}
