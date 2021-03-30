@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '3q$l8als=slhqzrd5u1tpm5_ls7ltbqexsawu-ul$)heim$mc-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['tanscorpio.pythonanywhere.com',"127.0.0.1"]
 
 
 # Application definition
