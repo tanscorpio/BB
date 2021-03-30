@@ -1,8 +1,9 @@
 {% load static %}
+
 body {
     width: 100%;
     height: 100vh;
-    background-image:  url("/static/home/book.webp");
+    background-image:  url("/static/home/Book.webp");
     background-color: #cccccc;
     background-size: cover ;
     background-position-y: 75%;

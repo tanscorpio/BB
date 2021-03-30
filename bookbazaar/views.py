@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from .models import *
 
+
 def lout(request):
     logout(request)
     return redirect("/")
@@ -30,6 +31,7 @@ def sell(request):
             return render(request,'bookbazaar/sell.html',context)
     
 
+@login_required(login_url='/')
 def buy(request):
     products=Product.objects.all()
     context={ 'products':products }  
